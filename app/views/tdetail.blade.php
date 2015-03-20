@@ -4,7 +4,7 @@
         <div class="large-12 columns">
              <div class = "panel">
                 <h2 class="header2">Analysis<a href ="{{URL::to('excel',array('id'=>$tid))}}" class="button add">View in Excel</a></h2>
-                <div id="jqChart" style="width: 100%; height: 500px;"></div>
+                <div id="jqChart" style="width: 100%; height: 500px;"></div>                
              </div>
         </div>
     </div>
@@ -22,6 +22,60 @@
         </div>
 
         <div class="large-8 columns">
+        	<div class="panel">
+                <div class = "row">
+                    <div class="large-12 columns">
+                        <h3>Stat</h3>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="large-12 columns">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th width="500">attribute</th>
+                                    <th width="150">mean</th>
+                                    <th width="150">SD</th>
+                                </tr>
+                                <tbody>                                	
+                                	<?php
+						                $count=0;
+						                if($allc != "")
+					                    {
+							                foreach($allc as $c)
+							                {							                    
+							                    $sum = 0;
+							                    $usernum = 0;
+							                    $alluser = Testinuser::where('tid','=',$tid)->where('cid','=',$c->cid)->get();                   
+							                    foreach($alluser as $temp)
+							                    {               		
+							                    	//echo $temp->point+"//";
+							                    	$sum += $temp->point;
+							                    	$usernum++;
+							                    }
+							                    $count++;
+							                    $mean = $sum/$usernum;
+							                    $standardDeviation = 0;
+							                    foreach($alluser as $temp)
+							                    {  
+							                    	$standardDeviation += pow(($temp->point)-$mean,2);
+							                    	$usernum++;
+							                    }
+							                    $standardDeviation = sqrt($standardDeviation/$usernum);
+							                    echo "<tr>";
+							                    echo "<td>" . $c->cname . "</td>";
+							                    echo "<td>" . $mean . "</td>";
+							                    echo "<td>" . sprintf('%0.2f', $standardDeviation) . "</td>";
+							                    echo "</tr>";
+							                }
+						            	}
+					                ?>					                                                    
+                                </tbody>
+                            </thead>
+                        </table>
+                    </div>
+                </div>
+            </div>
             <div class="panel">
                 <div class = "row">
                     <div class="large-12 columns">

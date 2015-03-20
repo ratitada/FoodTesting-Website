@@ -27,7 +27,7 @@
                 </div>
                 <div class = "row">
                     <div class="large-5 columns">
-                        <h2 class="header2">Child<a class = "button add" href ="#" data-reveal-id="myModal" data-reveal>new</a></h2>
+                        <h2 class="header2">Attribute<a class = "button add" href ="#" data-reveal-id="myModal" data-reveal>new</a></h2>
                     </div>
                     <input type = "hidden" id = "a" name = "allattribute" value = "0">
                 </div>
@@ -44,10 +44,10 @@
         </div>
     </div>
     <div id="myModal" class="reveal-modal small" data-reveal>
-        <h2 class="header2">New Child</h2>
+        <h2 class="header2">New Attribute</h2>
         <div class="row">
             <div class="large-6 columns">
-                <label>Attribute Name
+                <label>Category Name
                     <select name = "aid" id = "aid">
                         @foreach($alla as $a)
                             <option value="{{$a->aid}}">{{$a->aname}}</option>
@@ -56,19 +56,19 @@
                 </label>
             </div>
             <div class="large-6 columns">
-                <label>Childname Name
+                <label>Attribute Name
                     <input type="text" id = "cname" name = "cname"/>
                 </label>
             </div>
         </div>
         <div class="row">
             <div class="large-6 columns">
-                <label>Min Average
+                <label>Reference 1
                     <input type="text" id = "min" name = "min"/>
                 </label>
             </div>
             <div class="large-6 columns">
-                <label>Max Average
+                <label>Reference 2
                     <input type="text" id = "max" name = "max"/>
                 </label>
             </div>
@@ -98,7 +98,7 @@
                         $('#cname').val("");
                         $('#min').val("");
                         $('#max').val("");
-                        $('<div class="row"><div class="large-3 columns"><label>Attribute<input type="text"  value = "'+z+'" disabled/></label></div><div class="large-3 columns"><label>Child'+num+' name<input type="text" value = "'+y+'" disabled/></label></div><div class="large-3 columns"><label>Min Average<input type="text" value = "'+min+'" disabled/></label></div><div class="large-3 columns"><label>Max Average<input type="text" value = "'+max+'" disabled/></label></div></div>').appendTo('#allatt');
+                        $('<div class="row"><div class="large-3 columns"><label>Category<input type="text"  value = "'+z+'" disabled/></label></div><div class="large-3 columns"><label>Attribute'+num+' name<input type="text" value = "'+y+'" disabled/></label></div><div class="large-3 columns"><label>Reference 1<input type="text" value = "'+min+'" disabled/></label></div><div class="large-3 columns"><label>Reference 2<input type="text" value = "'+max+'" disabled/></label></div></div>').appendTo('#allatt');
                         num++;
                         $('#myModal').foundation('reveal', 'close');
                         item.push(inside);

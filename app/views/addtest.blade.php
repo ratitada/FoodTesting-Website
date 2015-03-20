@@ -27,7 +27,7 @@
                 </div>
                 <div class = "row">
                     <div class="large-5 columns">
-                        <h2 class="header2">Attribute<a class = "button add" href ="#" data-reveal-id="myModal" data-reveal>new</a></h2>
+                        <h2 class="header2">Category<a class = "button add" href ="#" data-reveal-id="myModal" data-reveal>new</a></h2>
                         <div id = "allatt">
                         </div>
                     </div>
@@ -40,10 +40,10 @@
         </div>
     </div>
     <div id="myModal" class="reveal-modal small" data-reveal>
-        <h2 class="header2">New Attribute</h2>
+        <h2 class="header2">New Category</h2>
         <div class="row">
             <div class="large-12 columns">
-                <label>Attribute Name
+                <label>Category Name
                     <input type="text" id = "aname" name = "aname"/>
                 </label>
             </div>
@@ -63,7 +63,7 @@
                 var inside = new Object();
                 inside.aname = x;
                 $('#aname').val("");
-                $('<label>Attribute'+num+' name<input type="text" name = "attribute'+num+'" value = "'+x+'" disabled/></label>').appendTo('#allatt');
+                $('<label>Category'+num+' name<input type="text" name = "attribute'+num+'" value = "'+x+'" disabled/></label>').appendTo('#allatt');
                 num++;
                 $('#myModal').foundation('reveal', 'close');
                 item.push(inside);
