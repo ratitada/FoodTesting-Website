@@ -64,7 +64,7 @@
 							                    $standardDeviation = sqrt($standardDeviation/$usernum);
 							                    echo "<tr>";
 							                    echo "<td>" . $c->cname . "</td>";
-							                    echo "<td>" . $mean . "</td>";
+							                    echo "<td>" . sprintf('%0.2f', $mean) . "</td>";
 							                    echo "<td>" . sprintf('%0.2f', $standardDeviation) . "</td>";
 							                    echo "</tr>";
 							                }
