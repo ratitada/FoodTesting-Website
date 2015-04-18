@@ -40,7 +40,6 @@ Route::post('testtodb',array('uses'=>'HomeController@testtodb'));
 Route::post('testtodb2',array('uses'=>'HomeController@testtodb2'));
 Route::post('addusertotest',array('uses'=>'HomeController@addusertotest'));
 
-
 /*========================= API ================================*/
 Route::group(array('prefix' => 'api/v1'), function()
 {
