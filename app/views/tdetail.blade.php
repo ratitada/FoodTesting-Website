@@ -118,7 +118,7 @@
                                 <?php 
                                     $x = Userintest::where('uid','=',$u->uid)->where('tid','=',$tid)->first();
                                 ?>
-                                @if(!isset($x))
+                                @if(!isset($x) and ($u->role != "admin"))
                                     <option value = "{{$u->uid}}">{{$u->uname}}</option>   
                                 @endif    
                             @endforeach

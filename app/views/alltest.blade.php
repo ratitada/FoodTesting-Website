@@ -17,7 +17,7 @@
                                     <th width="450">Detail</th>
                                     <th width="200">created at</th>
                                     <th width="200">updated at</th>
-                                    <th width="40">Manage</th>
+                                    <th width="20">Manage</th>
                                 </tr>
                                 <tbody>
                                     @foreach($allt as $t)

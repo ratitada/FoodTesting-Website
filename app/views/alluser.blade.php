@@ -16,7 +16,8 @@
                                     <th width="150">User ID</th>
                                     <th width="450">Username</th>
                                     <th width="200">Password</th>
-                                    <th width="200">Role</th>
+                                    <th width="100">Role</th>
+                                    <th width="20">Manage</th>
                                 </tr>
                                 <tbody>
                                     @foreach($allu as $u)
@@ -25,6 +26,14 @@
                                             <td>{{$u->uname}}</td>
                                             <td>{{$u->passwordsee}}</td>
                                             <td>{{$u->role}}</td>
+                                            <?php
+                                                if($u->role != "admin")
+                                                {
+                                                    echo "<td align='center'>";
+                                                        echo "<a href='app/act/deleteuser.php?uid=".$u->uid."'><img src='public/assets/image/60578.png' width='15' border='0'>  </a>";
+                                                    echo "</td>";
+                                                }
+                                            ?>
                                         </tr>
                                     @endforeach
                                 </tbody>
