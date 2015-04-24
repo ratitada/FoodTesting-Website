@@ -11,7 +11,7 @@
     <div class="row">
         <div class="large-4 columns">
             <div class = "panel">
-                <h4>Test id : {{$t->tid}}</h4>
+                <h4>Test id : <?php echo sprintf("%03d", $t->tid);?></h4>
                 <p>Detail : {{$t->detail}}</p>
             </div> 
             <div class="panel">

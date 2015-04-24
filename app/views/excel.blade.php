@@ -3,7 +3,7 @@
     <div class="row">
         <div class="large-12 columns">
             <div class = "panel">
-                <h4>Test id : {{$t->tid}}<input type="button" href ="#"  onclick="tableToExcel('xx', 'W3C Example Table')" class="button add" value = "Export"></h4><!-- <a href ="#" id ="export" class="button add">Export</a> -->
+                <h4>Test id : <?php echo sprintf("%03d", $t->tid);?><input type="button" href ="#"  onclick="tableToExcel('xx', 'W3C Example Table')" class="button add" value = "Export"></h4><!-- <a href ="#" id ="export" class="button add">Export</a> -->
                 <p>Detail : {{$t->detail}}</p>
             </div> 
         </div>

@@ -22,7 +22,7 @@
                                 <tbody>
                                     @foreach($allt as $t)
                                         <tr>
-                                            <td><a href="{{URL::to('tdetail',array('id'=>$t->tid))}}">{{$t->tid}}</a></td>
+                                            <td><a href="{{URL::to('tdetail',array('id'=>$t->tid))}}"><?php echo sprintf("%03d", $t->tid);?></a></td>
                                             <td>{{$t->detail}}</td>
                                             <td>{{$t->created_at}}</td>
                                             <td>{{$t->updated_at}}</td>
